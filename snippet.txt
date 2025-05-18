@@ -1,0 +1,91 @@
+√Explanation-Generic-Rule-Circulation
+Circulation_Rule(?rule) -> hasGenericRuleExplanation(?rule, "Object circulation is restricted, according to rules.")
+
+√Explanation-Generic-Rule-Use
+Use_Rule(?rule) -> hasGenericRuleExplanation(?rule, "Object use is restricted, according to rules.")
+
+√Explanation-Generic-Rule-Access
+Access_Rule(?rule) -> hasGenericRuleExplanation(?rule, "Object access is restricted, according to rules.")
+
+√Explanation-Generic-Rule-Condition
+Condition_Rule(?rule) -> hasGenericRuleExplanation(?rule, "Object is restricted on specific conditions, according to rules.")
+
+√Explanation-Generic-Rule-Sharing
+Sharing_Rule(?rule) -> hasGenericRuleExplanation(?rule, "Information sharing is restricted, according to rules.")
+
+√Explanation-Generic-Rule-Authorization
+Authorization_Rule(?rule) -> hasGenericRuleExplanation(?rule, "Authorized Member only.")
+
+√Explanation-Generic-Rule-Clan-Only
+Clan_Only_Rule(?rule) -> hasGenericRuleExplanation(?rule, "Clan/Community Member Only.")
+
+√Explanation-Generic-Rule-Family-Only
+Family_Only_Rule(?rule) -> hasGenericRuleExplanation(?rule, "Owner’s family only.")
+
+√Explanation-Generic-Rule-Treatment
+Treatment_Rule(?rule) -> hasGenericRuleExplanation(?rule, "Treat the object according to the rules applied.")
+
+√Explanation-Generic-Rule-Safe_Storage
+Safe_Storage_Rule(?rule) -> hasGenericRuleExplanation(?rule, "Store the object according to the rules applied.")
+
+√Explanation-Generic-Rule-Men_Only
+Men_Only_Rule(?rule) -> hasGenericRuleExplanation(?rule, "Available only for men.")
+
+√Explanation-Generic-Rule-Women_Only
+Women_Only_Rule(?rule) -> hasGenericRuleExplanation(?rule, "Available only for women.")
+
+√Explanation-Generic-Rule-Time_Period
+Time_Period_Rule(?rule) -> hasGenericRuleExplanation(?rule, "Rules apply according to current time of the year”)
+
+
+
+========================================================================================================================================
+
+
+√Explanation-Generic-Condition-Colonial_Legacy
+Colonial_Legacy_Condition(?condition) -> hasGenericRuleExplanation(?condition, "Object with Colonial Legacy.")
+
+√Explanation-Generic-Condition-Commercializable
+Commercializable_Condition(?condition) -> hasGenericRuleExplanation(?condition, "Open for commercialization.")
+
+√Explanation-Generic-Condition-Non_Commercializable
+Non_Commercialized_Condition(?condition) -> hasGenericRuleExplanation(?condition, "No commercialization allowed.")
+
+√Explanation-Generic-Condition-Incomplete_Information
+Circulation_Rule(?condition) -> hasGenericRuleExplanation(?condition, "Information incomplete.")
+
+√Explanation-Generic-Condition-Copyrighted
+Copyrighted_Condition(?condition) -> hasGenericRuleExplanation(?condition, "Copyrighted Object.")
+
+√Explanation-Generic-Condition-Culturally_Sensitive
+Culturally_Sensitive_Condition(?condition) -> hasGenericRuleExplanation(?condition, "Culturally Sensitive.")
+
+√Explanation-Generic-Condition-Exclusive
+Exclusive_Condition(?condition) -> hasGenericRuleExplanation(?condition, "Not for public.")
+
+√Explanation-Generic-Condition-Inclusive
+Inclusive_Condition(?condition) -> hasGenericRuleExplanation(?condition, "Open for public.")
+
+√Explanation-Generic-Condition-Geographical
+Geographical_Condition(?condition) -> hasGenericRuleExplanation(?condition, "Holds geographical significance.")
+
+√Explanation-Generic-Condition-Wrong_Information
+Wrong_Information_Condition(?condition) -> hasGenericRuleExplanation(?condition, "Information incomplete.")
+
+√Explanation-Generic-Condition-Multiple_Ownership
+Multiple_Ownership_Condition(?condition) -> hasGenericRuleExplanation(?condition, "Owned by multiple communities.")
+
+√Explanation-Generic-Condition-Specific_Use
+Specific_Use_Condition(?condition) -> hasGenericRuleExplanation(?condition, "Made for specific use.")
+
+√Explanation-Generic-Condition-Spiritually_Valuable
+Spiritually_Valuable_Condition(?condition) -> hasGenericRuleExplanation(?condition, "Holds spiritual significance.")
+
+√Explanation-Generic-Condition-Periodical
+Periodical_Condition(?condition) -> hasGenericRuleExplanation(?condition, "Conditioned for specific period.")
+
+√Explanation-Generic-Condition-Protocol_Verified
+Protocol_Verified_Condition(?condition) -> hasGenericRuleExplanation(?condition, "Protocol is verified by Community that owns it.")
+
+√Explanation-Generic-Condition-Protocol_Non_Verified
+Protocol_Non_Verified_Condition(?condition) -> hasGenericRuleExplanation(?condition, "Unverified by Community that owns it.")

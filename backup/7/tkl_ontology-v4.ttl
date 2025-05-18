@@ -20,6 +20,27 @@
 #    Object Properties
 #################################################################
 
+###  http://www.semanticweb.org/christiannababan/ontologies/2025/3/untitled-ontology-208/_hasConditionExplanation
+:_hasConditionExplanation rdf:type owl:ObjectProperty ;
+                          rdfs:subPropertyOf owl:topObjectProperty ;
+                          rdfs:domain <http://www.tkl-ontology.org/2/Condition> ;
+                          rdfs:range <http://www.tkl-ontology.org/2/Explanation> .
+
+
+###  http://www.semanticweb.org/christiannababan/ontologies/2025/3/untitled-ontology-208/_hasEncouragementExplanation
+:_hasEncouragementExplanation rdf:type owl:ObjectProperty ;
+                              rdfs:subPropertyOf owl:topObjectProperty ;
+                              rdfs:domain <http://www.tkl-ontology.org/2/Encouragement> ;
+                              rdfs:range <http://www.tkl-ontology.org/2/Explanation> .
+
+
+###  http://www.semanticweb.org/christiannababan/ontologies/2025/3/untitled-ontology-208/_hasRuleExplanation
+:_hasRuleExplanation rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf owl:topObjectProperty ;
+                     rdfs:domain <http://www.tkl-ontology.org/2/Rule> ;
+                     rdfs:range <http://www.tkl-ontology.org/2/Explanation> .
+
+
 ###  http://www.semanticweb.org/christiannababan/ontologies/2025/3/untitled-ontology-208/explainsInformation
 :explainsInformation rdf:type owl:ObjectProperty ;
                      rdfs:subPropertyOf owl:topObjectProperty ;
@@ -28,59 +49,44 @@
                      rdfs:range <http://www.tkl-ontology.org/2/Specific_Explanation> .
 
 
-###  http://www.semanticweb.org/christiannababan/ontologies/2025/3/untitled-ontology-208/hasConditionExplanation
-:hasConditionExplanation rdf:type owl:ObjectProperty ;
-                         rdfs:subPropertyOf owl:topObjectProperty .
-
-
-###  http://www.semanticweb.org/christiannababan/ontologies/2025/3/untitled-ontology-208/hasEncouragementExplanation
-:hasEncouragementExplanation rdf:type owl:ObjectProperty ;
-                             rdfs:subPropertyOf owl:topObjectProperty .
-
-
 ###  http://www.semanticweb.org/christiannababan/ontologies/2025/3/untitled-ontology-208/hasGenericConditionExplanation
 :hasGenericConditionExplanation rdf:type owl:ObjectProperty ;
-                                rdfs:subPropertyOf :hasConditionExplanation ;
+                                rdfs:subPropertyOf :_hasConditionExplanation ;
                                 rdfs:domain <http://www.tkl-ontology.org/2/Condition> ;
                                 rdfs:range <http://www.tkl-ontology.org/2/Generic_Explanation> .
 
 
 ###  http://www.semanticweb.org/christiannababan/ontologies/2025/3/untitled-ontology-208/hasGenericEncouragementExplanation
 :hasGenericEncouragementExplanation rdf:type owl:ObjectProperty ;
-                                    rdfs:subPropertyOf :hasEncouragementExplanation ;
+                                    rdfs:subPropertyOf :_hasEncouragementExplanation ;
                                     rdfs:domain <http://www.tkl-ontology.org/2/Encouragement> ;
                                     rdfs:range <http://www.tkl-ontology.org/2/Generic_Explanation> .
 
 
 ###  http://www.semanticweb.org/christiannababan/ontologies/2025/3/untitled-ontology-208/hasGenericRuleExplanation
 :hasGenericRuleExplanation rdf:type owl:ObjectProperty ;
-                           rdfs:subPropertyOf :hasRuleExplanation ;
+                           rdfs:subPropertyOf :_hasRuleExplanation ;
                            rdfs:domain <http://www.tkl-ontology.org/2/Rule> ;
                            rdfs:range <http://www.tkl-ontology.org/2/Generic_Explanation> .
 
 
-###  http://www.semanticweb.org/christiannababan/ontologies/2025/3/untitled-ontology-208/hasRuleExplanation
-:hasRuleExplanation rdf:type owl:ObjectProperty ;
-                    rdfs:subPropertyOf owl:topObjectProperty .
-
-
 ###  http://www.semanticweb.org/christiannababan/ontologies/2025/3/untitled-ontology-208/hasSpecificConditionExplanation
 :hasSpecificConditionExplanation rdf:type owl:ObjectProperty ;
-                                 rdfs:subPropertyOf :hasConditionExplanation ;
+                                 rdfs:subPropertyOf :_hasConditionExplanation ;
                                  rdfs:domain <http://www.tkl-ontology.org/2/Condition> ;
                                  rdfs:range <http://www.tkl-ontology.org/2/Specific_Explanation> .
 
 
 ###  http://www.semanticweb.org/christiannababan/ontologies/2025/3/untitled-ontology-208/hasSpecificEncouragementExplanation
 :hasSpecificEncouragementExplanation rdf:type owl:ObjectProperty ;
-                                     rdfs:subPropertyOf :hasEncouragementExplanation ;
+                                     rdfs:subPropertyOf :_hasEncouragementExplanation ;
                                      rdfs:domain <http://www.tkl-ontology.org/2/Encouragement> ;
                                      rdfs:range <http://www.tkl-ontology.org/2/Specific_Explanation> .
 
 
 ###  http://www.semanticweb.org/christiannababan/ontologies/2025/3/untitled-ontology-208/hasSpecificRuleExplanation
 :hasSpecificRuleExplanation rdf:type owl:ObjectProperty ;
-                            rdfs:subPropertyOf :hasRuleExplanation ;
+                            rdfs:subPropertyOf :_hasRuleExplanation ;
                             rdfs:domain <http://www.tkl-ontology.org/2/Rule> ;
                             rdfs:range <http://www.tkl-ontology.org/2/Specific_Explanation> .
 
@@ -168,6 +174,8 @@
 ###  http://www.tkl-ontology.org/2/containsInformation
 <http://www.tkl-ontology.org/2/containsInformation> rdf:type owl:ObjectProperty ;
                                                     rdfs:subPropertyOf owl:topObjectProperty ;
+                                                    rdfs:domain <http://www.tkl-ontology.org/2#Material> ;
+                                                    rdfs:range <http://www.tkl-ontology.org/2/Information> ;
                                                     rdfs:comment "Information about an object. In case there the information incomplete or wrong, it has to be fixed in the future." .
 
 
@@ -195,12 +203,16 @@
 ###  http://www.tkl-ontology.org/2/emphasizesAssociationOf
 <http://www.tkl-ontology.org/2/emphasizesAssociationOf> rdf:type owl:ObjectProperty ;
                                                         rdfs:subPropertyOf owl:topObjectProperty ;
+                                                        rdfs:domain <http://www.tkl-ontology.org/2/Association_Label> ;
+                                                        rdfs:range <http://www.tkl-ontology.org/2/Information> ;
                                                         rdfs:comment "Label that expresses how an ILC wants to emphasize a specific information." .
 
 
 ###  http://www.tkl-ontology.org/2/emphasizesAssociationOn
 <http://www.tkl-ontology.org/2/emphasizesAssociationOn> rdf:type owl:ObjectProperty ;
                                                         rdfs:subPropertyOf owl:topObjectProperty ;
+                                                        rdfs:domain <http://www.tkl-ontology.org/2/Association_Label> ;
+                                                        rdfs:range <http://www.tkl-ontology.org/2#Material> ;
                                                         rdfs:comment "Label that expresses how an ILC wants to emphasize a specific information to display on a material." .
 
 
@@ -247,6 +259,8 @@
 ###  http://www.tkl-ontology.org/2/enforcesRuleOf
 <http://www.tkl-ontology.org/2/enforcesRuleOf> rdf:type owl:ObjectProperty ;
                                                rdfs:subPropertyOf owl:topObjectProperty ;
+                                               rdfs:domain <http://www.tkl-ontology.org/2/Indigenous_Local_Community> ;
+                                               rdfs:range <http://www.tkl-ontology.org/2/Rule> ;
                                                rdfs:comment "A specific rule that an ILC normally enforces." .
 
 
@@ -439,7 +453,9 @@
 
 ###  http://www.tkl-ontology.org/2/hasInformationOf
 <http://www.tkl-ontology.org/2/hasInformationOf> rdf:type owl:ObjectProperty ;
-                                                 rdfs:subPropertyOf owl:topObjectProperty .
+                                                 rdfs:subPropertyOf owl:topObjectProperty ;
+                                                 rdfs:domain <http://www.tkl-ontology.org/2#Collection_of_Person> ;
+                                                 rdfs:range <http://www.tkl-ontology.org/2/Information> .
 
 
 ###  http://www.tkl-ontology.org/2/hasInformationOn
@@ -453,7 +469,9 @@
 ###  http://www.tkl-ontology.org/2/hasMember
 <http://www.tkl-ontology.org/2/hasMember> rdf:type owl:ObjectProperty ;
                                           rdfs:subPropertyOf owl:topObjectProperty ;
-                                          owl:inverseOf <http://www.tkl-ontology.org/2/memberOf> .
+                                          owl:inverseOf <http://www.tkl-ontology.org/2/memberOf> ;
+                                          rdfs:domain <http://www.tkl-ontology.org/2#Collection_of_Person> ;
+                                          rdfs:range <http://www.tkl-ontology.org/2#Person> .
 
 
 ###  http://www.tkl-ontology.org/2/hasNeed
@@ -475,7 +493,9 @@
 
 ###  http://www.tkl-ontology.org/2/hasOwnershipOn
 <http://www.tkl-ontology.org/2/hasOwnershipOn> rdf:type owl:ObjectProperty ;
-                                               rdfs:subPropertyOf owl:topObjectProperty .
+                                               rdfs:subPropertyOf owl:topObjectProperty ;
+                                               rdfs:domain <http://www.tkl-ontology.org/2/Indigenous_Local_Community> ;
+                                               rdfs:range <http://www.tkl-ontology.org/2#Material> .
 
 
 ###  http://www.tkl-ontology.org/2/hasPeriodClarificationWishOf
@@ -517,7 +537,8 @@
 
 ###  http://www.tkl-ontology.org/2/hasRequirement
 <http://www.tkl-ontology.org/2/hasRequirement> rdf:type owl:ObjectProperty ;
-                                               rdfs:subPropertyOf owl:topObjectProperty .
+                                               rdfs:subPropertyOf owl:topObjectProperty ;
+                                               rdfs:domain <http://www.tkl-ontology.org/2#Material> .
 
 
 ###  http://www.tkl-ontology.org/2/hasResearchActivityWishOf
@@ -606,7 +627,11 @@
 
 ###  http://www.tkl-ontology.org/2/hasWishOf
 <http://www.tkl-ontology.org/2/hasWishOf> rdf:type owl:ObjectProperty ;
-                                          rdfs:subPropertyOf owl:topObjectProperty .
+                                          rdfs:subPropertyOf owl:topObjectProperty ;
+                                          rdfs:domain <http://www.tkl-ontology.org/2/Indigenous_Local_Community> ;
+                                          rdfs:range <http://www.tkl-ontology.org/2/Activity> ,
+                                                     <http://www.tkl-ontology.org/2/Clarification> ,
+                                                     <http://www.tkl-ontology.org/2/Encouragement> .
 
 
 ###  http://www.tkl-ontology.org/2/highlightsColonialLegacyConditionOf
@@ -625,7 +650,9 @@
 
 ###  http://www.tkl-ontology.org/2/highlightsConditionOf
 <http://www.tkl-ontology.org/2/highlightsConditionOf> rdf:type owl:ObjectProperty ;
-                                                      rdfs:subPropertyOf owl:topObjectProperty .
+                                                      rdfs:subPropertyOf owl:topObjectProperty ;
+                                                      rdfs:domain <http://www.tkl-ontology.org/2/Indigenous_Local_Community> ;
+                                                      rdfs:range <http://www.tkl-ontology.org/2/Condition> .
 
 
 ###  http://www.tkl-ontology.org/2/highlightsCopyrightedConditionOf
@@ -935,12 +962,16 @@
 
 ###  http://www.tkl-ontology.org/2/indicatesConditionOf
 <http://www.tkl-ontology.org/2/indicatesConditionOf> rdf:type owl:ObjectProperty ;
-                                                     rdfs:subPropertyOf owl:topObjectProperty .
+                                                     rdfs:subPropertyOf owl:topObjectProperty ;
+                                                     rdfs:domain <http://www.tkl-ontology.org/2#TKL_Label> ;
+                                                     rdfs:range <http://www.tkl-ontology.org/2/Condition> .
 
 
 ###  http://www.tkl-ontology.org/2/indicatesConditionOn
 <http://www.tkl-ontology.org/2/indicatesConditionOn> rdf:type owl:ObjectProperty ;
-                                                     rdfs:subPropertyOf owl:topObjectProperty .
+                                                     rdfs:subPropertyOf owl:topObjectProperty ;
+                                                     rdfs:domain <http://www.tkl-ontology.org/2/Condition_Label> ;
+                                                     rdfs:range <http://www.tkl-ontology.org/2#Material> .
 
 
 ###  http://www.tkl-ontology.org/2/indicatesCopyrightedConditionOf
@@ -1171,12 +1202,16 @@
 
 ###  http://www.tkl-ontology.org/2/indicatesInformationOf
 <http://www.tkl-ontology.org/2/indicatesInformationOf> rdf:type owl:ObjectProperty ;
-                                                       rdfs:subPropertyOf owl:topObjectProperty .
+                                                       rdfs:subPropertyOf owl:topObjectProperty ;
+                                                       rdfs:domain <http://www.tkl-ontology.org/2#TKL_Label> ;
+                                                       rdfs:range <http://www.tkl-ontology.org/2/Information> .
 
 
 ###  http://www.tkl-ontology.org/2/indicatesInformationOn
 <http://www.tkl-ontology.org/2/indicatesInformationOn> rdf:type owl:ObjectProperty ;
                                                        rdfs:subPropertyOf owl:topObjectProperty ;
+                                                       rdfs:domain <http://www.tkl-ontology.org/2#TKL_Label> ;
+                                                       rdfs:range <http://www.tkl-ontology.org/2#Material> ;
                                                        rdfs:comment "Materian - Information Relationship" .
 
 
@@ -1322,13 +1357,18 @@
 
 ###  http://www.tkl-ontology.org/2/indicatesPurposeOf
 <http://www.tkl-ontology.org/2/indicatesPurposeOf> rdf:type owl:ObjectProperty ;
-                                                   rdfs:subPropertyOf owl:topObjectProperty .
+                                                   rdfs:subPropertyOf owl:topObjectProperty ;
+                                                   rdfs:domain <http://www.tkl-ontology.org/2#TKL_Label> ;
+                                                   rdfs:range <http://www.tkl-ontology.org/2/Clarification> ,
+                                                              <http://www.tkl-ontology.org/2/Encouragement> .
 
 
 ###  http://www.tkl-ontology.org/2/indicatesPurposeOn
 <http://www.tkl-ontology.org/2/indicatesPurposeOn> rdf:type owl:ObjectProperty ;
                                                    rdfs:subPropertyOf owl:topObjectProperty ;
-                                                   owl:inverseOf <http://www.tkl-ontology.org/2/needs> .
+                                                   owl:inverseOf <http://www.tkl-ontology.org/2/needs> ;
+                                                   rdfs:domain <http://www.tkl-ontology.org/2#TKL_Label> ;
+                                                   rdfs:range <http://www.tkl-ontology.org/2#Material> .
 
 
 ###  http://www.tkl-ontology.org/2/indicatesRaiseAwarenessPurposeOf
@@ -1378,12 +1418,16 @@
 
 ###  http://www.tkl-ontology.org/2/indicatesRuleOf
 <http://www.tkl-ontology.org/2/indicatesRuleOf> rdf:type owl:ObjectProperty ;
-                                                rdfs:subPropertyOf owl:topObjectProperty .
+                                                rdfs:subPropertyOf owl:topObjectProperty ;
+                                                rdfs:domain <http://www.tkl-ontology.org/2#TKL_Label> ;
+                                                rdfs:range <http://www.tkl-ontology.org/2/Rule> .
 
 
 ###  http://www.tkl-ontology.org/2/indicatesRuleOn
 <http://www.tkl-ontology.org/2/indicatesRuleOn> rdf:type owl:ObjectProperty ;
-                                                rdfs:subPropertyOf owl:topObjectProperty .
+                                                rdfs:subPropertyOf owl:topObjectProperty ;
+                                                rdfs:domain <http://www.tkl-ontology.org/2#TKL_Label> ;
+                                                rdfs:range <http://www.tkl-ontology.org/2#Material> .
 
 
 ###  http://www.tkl-ontology.org/2/indicatesSacredConditionOf
@@ -1621,7 +1665,9 @@
 
 ###  http://www.tkl-ontology.org/2/memberOf
 <http://www.tkl-ontology.org/2/memberOf> rdf:type owl:ObjectProperty ;
-                                         rdfs:subPropertyOf owl:topObjectProperty .
+                                         rdfs:subPropertyOf owl:topObjectProperty ;
+                                         rdfs:domain <http://www.tkl-ontology.org/2#Person> ;
+                                         rdfs:range <http://www.tkl-ontology.org/2#Collection_of_Person> .
 
 
 ###  http://www.tkl-ontology.org/2/memberPublicOf
@@ -1649,7 +1695,11 @@
 
 ###  http://www.tkl-ontology.org/2/needs
 <http://www.tkl-ontology.org/2/needs> rdf:type owl:ObjectProperty ;
-                                      rdfs:subPropertyOf owl:topObjectProperty .
+                                      rdfs:subPropertyOf owl:topObjectProperty ;
+                                      rdfs:domain <http://www.tkl-ontology.org/2#Material> ;
+                                      rdfs:range <http://www.tkl-ontology.org/2/Activity> ,
+                                                 <http://www.tkl-ontology.org/2/Clarification> ,
+                                                 <http://www.tkl-ontology.org/2/Encouragement> .
 
 
 ###  http://www.tkl-ontology.org/2/needsAwarenessRaised
@@ -1761,7 +1811,9 @@
 
 ###  http://www.tkl-ontology.org/2/performsOn
 <http://www.tkl-ontology.org/2/performsOn> rdf:type owl:ObjectProperty ;
-                                           rdfs:subPropertyOf owl:topObjectProperty .
+                                           rdfs:subPropertyOf owl:topObjectProperty ;
+                                           rdfs:domain <http://www.tkl-ontology.org/2/Activity> ;
+                                           rdfs:range <http://www.tkl-ontology.org/2#Material> .
 
 
 #################################################################
