@@ -4,7 +4,7 @@ from rdflib.namespace import RDFS
 class OntologyQuery:
     def __init__(self):
         self.graph = Graph()
-        self.graph.parse("tkl_ontology-v4-inferred.ttl", format='ttl')
+        self.graph.parse("tkl-ontology-extended.ttl", format='ttl')
 
         # Namespaces here
         self.ns_hashtag = Namespace("http://www.tkl-ontology.org/2#")
@@ -40,6 +40,33 @@ class OntologyQuery:
         """
         return [self.format_individual_with_class_hierarchy(row[0]) for row in self.graph.query(query)]
     
+    def get_explanations(self, individual_uri, generic_prop, specific_prop):
+        query = f"""
+        SELECT ?type ?literal
+        WHERE {{
+        OPTIONAL {{
+            <{individual_uri}> {self.ns[generic_prop].n3()} ?gen .
+            ?gen {self.ns.hasLiteralExplanation.n3()} ?literal .
+            BIND("generic" AS ?type)
+        }}
+        OPTIONAL {{
+            <{individual_uri}> {self.ns[specific_prop].n3()} ?spec .
+            ?spec {self.ns.hasLiteralExplanation.n3()} ?literal .
+            BIND("specific" AS ?type)
+        }}
+        }}
+        """
+        results = self.graph.query(query)
+        explanations = {"generic": [], "specific": []}
+        for row in results:
+            if row['type'] and row['literal']: # Check if both are not None
+                type_str = str(row['type'])
+                if type_str == "generic":
+                    explanations["generic"].append(str(row['literal']))
+                elif type_str == "specific":
+                    explanations["specific"].append(str(row['literal']))
+        return explanations   
+    
     def format_individual_with_class_hierarchy(self, individual_uri):
         # Get direct classes
         class_query = f"""
@@ -62,26 +89,13 @@ class OntologyQuery:
                     grandparents.add(gp)
 
         filtered_direct = set(direct_classes) - parents - grandparents
-        filtered_parents = set(direct_classes) - filtered_direct - grandparents
-        filtered_grandparents = set(direct_classes) - filtered_parents - filtered_direct
 
         # Convert URIs to labels
         direct_labels = [self.extract_label(c) for c in filtered_direct]
-        parent_labels = [self.extract_label(p) for p in filtered_parents]
-        grandparent_labels = [self.extract_label(gp) for gp in filtered_grandparents]
         individual_label = self.extract_label(individual_uri)
 
-        # Format the hierarchy
-        lines = [
-            ", ".join(grandparent_labels) if grandparent_labels else "—",
-            ", ".join(parent_labels) if parent_labels else "—",
-            ", ".join(direct_labels ),
-            self.extract_label(individual_uri)
-        ]
-
         return {
-            "grandparents": grandparent_labels,
-            "parents": parent_labels,
+            "uri": str(individual_uri),
             "direct_classes": direct_labels,
             "individual": individual_label,
         }

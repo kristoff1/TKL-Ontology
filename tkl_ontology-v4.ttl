@@ -1800,7 +1800,7 @@
 <http://www.tkl-ontology.org/2/hasObjectImage> rdf:type owl:DatatypeProperty ;
                                                rdfs:subPropertyOf owl:topDataProperty ;
                                                rdfs:domain <http://www.tkl-ontology.org/2#Material> ;
-                                               rdfs:range xsd:anyURI .
+                                               rdfs:range xsd:string .
 
 
 ###  http://www.tkl-ontology.org/2/hasSpecificRuleExplanation
@@ -3054,7 +3054,8 @@
                                                                       <http://www.tkl-ontology.org/2/assigned> <http://www.tkl-ontology.org/2/TK_Culturally_Sensitive> ;
                                                                       <http://www.tkl-ontology.org/2/hasCondition> <http://www.tkl-ontology.org/2#_test_culturally_sensitive_condition> ;
                                                                       <http://www.tkl-ontology.org/2/hasAccessLink> "https://amsterdam.wereldmuseum.nl/nl/5-topstukken-uit-wereldmuseum-amsterdam#:~:text=Pustaha,oudste%20en%20grootste%20Batak%20wichelboek."^^xsd:anyURI ,
-                                                                                                                    "https://issuu.com/tropenmuseum/docs/tm-a-1389"^^xsd:anyURI .
+                                                                                                                    "https://issuu.com/tropenmuseum/docs/tm-a-1389"^^xsd:anyURI ;
+                                                                      <http://www.tkl-ontology.org/2/hasObjectImage> "great_pustaha.png" .
 
 
 ###  http://www.tkl-ontology.org/2#_test_material_tangible_ulos_ragidup
@@ -3063,7 +3064,8 @@
                                                                      <http://www.tkl-ontology.org/2/assigned> <http://www.tkl-ontology.org/2/TK_Secret_Sacred> ;
                                                                      <http://www.tkl-ontology.org/2/hasCondition> <http://www.tkl-ontology.org/2#_test_toba_ulos_ragidup_condition_sacred> ,
                                                                                                                   <http://www.tkl-ontology.org/2#_test_toba_wedding_use_ulos_ragidup> ;
-                                                                     <http://www.tkl-ontology.org/2/hasAccessLink> "https://www.metmuseum.org/art/collection/search/315939"^^xsd:anyURI .
+                                                                     <http://www.tkl-ontology.org/2/hasAccessLink> "https://www.metmuseum.org/art/collection/search/315939"^^xsd:anyURI ;
+                                                                     <http://www.tkl-ontology.org/2/hasObjectImage> "ulos_ragidup.png" .
 
 
 ###  http://www.tkl-ontology.org/2#_test_toba_access_rule_great_pustaha

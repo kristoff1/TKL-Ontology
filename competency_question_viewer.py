@@ -73,19 +73,33 @@ class OntologyViewer(QWidget):
                 self.right_list.addItem(header)
 
                 for ind_data in individuals:
-                    # Add grandparents
-                    self.right_list.addItem(QListWidgetItem(", ".join(ind_data["grandparents"]) or "—"))
-                    # Add parents
-                    self.right_list.addItem(QListWidgetItem(", ".join(ind_data["parents"]) or "—"))
                     # Add direct classes
                     self.right_list.addItem(QListWidgetItem(", ".join(ind_data["direct_classes"]) or "—"))
-
+                                
                     # Individual name - BOLD
                     individual_item = QListWidgetItem(ind_data["individual"])
                     bold_font = QFont("Montserrat", 11)
                     bold_font.setBold(True)
                     individual_item.setFont(bold_font)
                     self.right_list.addItem(individual_item)
+
+                    if prop == "hasCondition": # Add Condition explanations
+                        # Add explanations
+                        explanations = self.ontology.get_explanations(individual_uri=ind_data["uri"], generic_prop="hasGenericConditionExplanation", specific_prop="hasSpecificConditionExplanation")
+                        for explanation_type, explanation_list in explanations.items():
+                            if explanation_list:
+                                explanation_item = QListWidgetItem(f"{explanation_type.capitalize()} Explanations: {', '.join(explanation_list)}")
+                                explanation_item.setFont(QFont("Montserrat", 10))
+                                self.right_list.addItem(explanation_item)
+                    elif prop == "hasRule": # Add Rule explanations
+                        # Add explanations
+                        explanations = self.ontology.get_explanations(individual_uri = ind_data["uri"], generic_prop="hasGenericRuleExplanation", specific_prop="hasSpecificRuleExplanation")
+                        for explanation_type, explanation_list in explanations.items():
+                            if explanation_list:
+                                explanation_item = QListWidgetItem(f"{explanation_type.capitalize()} Explanations: {', '.join(explanation_list)}")
+                                explanation_item.setFont(QFont("Montserrat", 10))
+                                self.right_list.addItem(explanation_item)
+                                
 
                     # Spacer
                     self.right_list.addItem(QListWidgetItem(""))
