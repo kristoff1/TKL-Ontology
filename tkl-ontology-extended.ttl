@@ -541,7 +541,8 @@
 ###  http://www.tkl-ontology.org/2/hasSpecificRuleExplanation
 <http://www.tkl-ontology.org/2/hasSpecificRuleExplanation> rdf:type owl:ObjectProperty ;
                                                            rdfs:subPropertyOf <http://www.tkl-ontology.org/2/hasRuleExplanation> ;
-                                                           rdfs:domain <http://www.tkl-ontology.org/2/Rule> ;
+                                                           rdfs:domain <http://www.tkl-ontology.org/2/Rule> ,
+                                                                       <http://www.tkl-ontology.org/2/Specific_Explanation> ;
                                                            rdfs:range <http://www.tkl-ontology.org/2/Specific_Explanation> .
 
 
@@ -1885,7 +1886,6 @@ owl:topObjectProperty rdf:type owl:ObjectProperty ;
 ###  http://www.tkl-ontology.org/2/hasSpecificRuleExplanation
 <http://www.tkl-ontology.org/2/hasSpecificRuleExplanation> rdf:type owl:DatatypeProperty ;
                                                            rdfs:subPropertyOf owl:topDataProperty ;
-                                                           rdfs:domain <http://www.tkl-ontology.org/2/Specific_Explanation> ;
                                                            rdfs:range xsd:string .
 
 
@@ -2855,6 +2855,28 @@ owl:topObjectProperty rdf:type owl:ObjectProperty ;
 #    Individuals
 #################################################################
 
+###  http://tkl-ontology-extended#_test_toba_ulos_wish_commercialization
+:_test_toba_ulos_wish_commercialization rdf:type owl:NamedIndividual ,
+                                                 <http://www.tkl-ontology.org/2/Encouragement> .
+
+
+###  http://tkl-ontology-extended#_test_toba_ulos_wish_education
+:_test_toba_ulos_wish_education rdf:type owl:NamedIndividual ,
+                                         <http://www.tkl-ontology.org/2/Encouragement> ;
+                                <http://www.tkl-ontology.org/2/hasGenericEncouragementExplanation> <http://www.tkl-ontology.org/2/generic_encouragement_cultural_appreciation_explanation> .
+
+
+###  http://tkl-ontology-extended#_test_toba_ulos_wish_outreach
+:_test_toba_ulos_wish_outreach rdf:type owl:NamedIndividual ,
+                                        <http://www.tkl-ontology.org/2/Encouragement> ;
+                               <http://www.tkl-ontology.org/2/hasGenericEncouragementExplanation> <http://www.tkl-ontology.org/2/generic_encouragement_raise_awareness_explanation> .
+
+
+###  http://tkl-ontology-extended#_test_toba_ulos_wish_research
+:_test_toba_ulos_wish_research rdf:type owl:NamedIndividual ,
+                                        <http://www.tkl-ontology.org/2/Encouragement> .
+
+
 ###  http://www.tkl-ontology.org/2#_test_circulation_rule_1
 <http://www.tkl-ontology.org/2#_test_circulation_rule_1> rdf:type owl:NamedIndividual ,
                                                                   <http://www.tkl-ontology.org/2/Circulation_Rule> ;
@@ -2947,6 +2969,8 @@ owl:topObjectProperty rdf:type owl:ObjectProperty ;
                                                                      <http://www.tkl-ontology.org/2/hasCondition> <http://www.tkl-ontology.org/2#_test_toba_ulos_ragidup_condition_sacred> ,
                                                                                                                   <http://www.tkl-ontology.org/2#_test_toba_wedding_use_ulos_ragidup> ;
                                                                      <http://www.tkl-ontology.org/2/hasDataConsentRequirement> <http://www.tkl-ontology.org/2#_test_ilc_toba> ;
+                                                                     <http://www.tkl-ontology.org/2/hasNeed> :_test_toba_ulos_wish_education ,
+                                                                                                             :_test_toba_ulos_wish_outreach ;
                                                                      <http://www.tkl-ontology.org/2/hasPermissionRequirementFrom> <http://www.tkl-ontology.org/2#_test_ilc_toba> ;
                                                                      <http://www.tkl-ontology.org/2/hasRequirement> <http://www.tkl-ontology.org/2#_test_ilc_toba> ;
                                                                      <http://www.tkl-ontology.org/2/hasRule> <http://www.tkl-ontology.org/2#_test_toba_mangulosi_rule> ,
