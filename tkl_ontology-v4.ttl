@@ -116,6 +116,7 @@
 ###  http://tkl-ontology/containsTraditionalKnowledgeInformation
 <http://tkl-ontology/containsTraditionalKnowledgeInformation> rdf:type owl:ObjectProperty ;
                                                               rdfs:subPropertyOf <http://tkl-ontology/containsInformation> ;
+                                                              owl:inverseOf :isKnowledgeContainedInMaterial ;
                                                               rdfs:domain <http://tkl-ontology/Material> ;
                                                               rdfs:range <http://tkl-ontology/Traditional_Knowledge> .
 
@@ -548,7 +549,8 @@
 ###  http://tkl-ontology/hasSpecificRuleExplanation
 <http://tkl-ontology/hasSpecificRuleExplanation> rdf:type owl:ObjectProperty ;
                                                  rdfs:subPropertyOf <http://tkl-ontology/hasRuleExplanation> ;
-                                                 rdfs:domain <http://tkl-ontology/Rule> ;
+                                                 rdfs:domain <http://tkl-ontology/Rule> ,
+                                                             <http://tkl-ontology/Specific_Explanation> ;
                                                  rdfs:range <http://tkl-ontology/Specific_Explanation> .
 
 
@@ -1764,6 +1766,13 @@
                                  rdfs:subPropertyOf owl:topObjectProperty .
 
 
+###  http://www.semanticweb.org/christiannababan/ontologies/2025/3/untitled-ontology-208/isKnowledgeContainedInMaterial
+:isKnowledgeContainedInMaterial rdf:type owl:ObjectProperty ;
+                                rdfs:subPropertyOf owl:topObjectProperty ;
+                                rdfs:domain <http://tkl-ontology/Traditional_Knowledge> ;
+                                rdfs:range <http://tkl-ontology/Material> .
+
+
 #################################################################
 #    Data properties
 #################################################################
@@ -1806,7 +1815,6 @@
 ###  http://tkl-ontology/hasSpecificRuleExplanation
 <http://tkl-ontology/hasSpecificRuleExplanation> rdf:type owl:DatatypeProperty ;
                                                  rdfs:subPropertyOf owl:topDataProperty ;
-                                                 rdfs:domain <http://tkl-ontology/Specific_Explanation> ;
                                                  rdfs:range xsd:string .
 
 
@@ -3112,6 +3120,7 @@
                                                 <http://tkl-ontology/Safe_Storage_Label> ,
                                                 <http://tkl-ontology/Specific_Access_Condition_Label> ,
                                                 <http://tkl-ontology/Specific_Use_Condition_Label> ,
+                                                <http://tkl-ontology/Traditional_Knowledge_Label> ,
                                                 <http://tkl-ontology/Treatment_Clarification_Label> ,
                                                 <http://tkl-ontology/Treatment_Rule_Label> ,
                                                 <http://tkl-ontology/Use_Rule_Label> .
@@ -3120,7 +3129,8 @@
 ###  http://tkl-ontology/TK_Verified
 <http://tkl-ontology/TK_Verified> rdf:type owl:NamedIndividual ,
                                            <http://tkl-ontology/Fair_Exchange_Encouragement_Label> ,
-                                           <http://tkl-ontology/Protocol_Verified_Label> .
+                                           <http://tkl-ontology/Protocol_Verified_Label> ,
+                                           <http://tkl-ontology/Traditional_Knowledge_Label> .
 
 
 ###  http://tkl-ontology/TK_Women_General
@@ -3131,6 +3141,7 @@
                                                 <http://tkl-ontology/Exclusive_Condition_Label> ,
                                                 <http://tkl-ontology/Share_Rule_Label> ,
                                                 <http://tkl-ontology/Traditional_Knowledge_Connection_Label> ,
+                                                <http://tkl-ontology/Traditional_Knowledge_Label> ,
                                                 <http://tkl-ontology/Use_Rule_Label> ,
                                                 <http://tkl-ontology/Women_Only_Label> .
 
@@ -3143,6 +3154,7 @@
                                                    <http://tkl-ontology/Exclusive_Condition_Label> ,
                                                    <http://tkl-ontology/Share_Rule_Label> ,
                                                    <http://tkl-ontology/Traditional_Knowledge_Connection_Label> ,
+                                                   <http://tkl-ontology/Traditional_Knowledge_Label> ,
                                                    <http://tkl-ontology/Use_Rule_Label> ,
                                                    <http://tkl-ontology/Women_Only_Label> .
 

@@ -1838,10 +1838,7 @@
 
 
 ###  http://www.w3.org/2002/07/owl#topObjectProperty
-owl:topObjectProperty rdf:type owl:ObjectProperty ;
-                      owl:inverseOf owl:topObjectProperty ;
-                      rdf:type owl:SymmetricProperty ,
-                               owl:TransitiveProperty .
+owl:topObjectProperty rdf:type owl:ObjectProperty .
 
 
 #################################################################
