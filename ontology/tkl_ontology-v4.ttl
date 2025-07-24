@@ -20,6 +20,17 @@
 #    Object Properties
 #################################################################
 
+###  http://tkl-ontology#indicatesSecretConditionOf
+:indicatesSecretConditionOf rdf:type owl:ObjectProperty ;
+                            owl:equivalentProperty <http://tkl-ontology/indicatesSacredConditionOf> ;
+                            rdfs:subPropertyOf <http://tkl-ontology/indicatesConditionOf> .
+
+
+###  http://tkl-ontology#indicatesSecretConditionOn
+:indicatesSecretConditionOn rdf:type owl:ObjectProperty ;
+                            rdfs:subPropertyOf <http://tkl-ontology/indicatesConditionOn> .
+
+
 ###  http://tkl-ontology/acknowledgedOn
 <http://tkl-ontology/acknowledgedOn> rdf:type owl:ObjectProperty ;
                                      rdfs:subPropertyOf owl:topObjectProperty ;
