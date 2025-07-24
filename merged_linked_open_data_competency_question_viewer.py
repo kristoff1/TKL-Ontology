@@ -5,7 +5,7 @@ from PyQt6.QtGui import QPixmap, QFont, QColor
 from PyQt6.QtCore import Qt, QByteArray
 import os
 
-from competency_question_query import OntologyQuery  
+from merged_competency_question_query import OntologyQuery  
 
 class OntologyViewer(QWidget):
     def __init__(self):
