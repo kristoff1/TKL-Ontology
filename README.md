@@ -1,6 +1,6 @@
-# Project Title
+# Traditional Knowledge Label Ontology
 
-Brief description of your project: what it does, its purpose, and the technologies used (e.g., Python, RDF/OWL, Turtle).
+Code and data for design, evaluation and implementation of the Traditional Knowledge Label Ontology  (e.g., Python, RDF/OWL, Turtle).
 
 ## 📦 Requirements
 ### Python Version
